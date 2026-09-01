@@ -1,0 +1,19 @@
+__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+.git/
+.gitignore
+
+# Old Guardian v2 entry point — replaced by heimdall_app.py, not imported anywhere
+api/
+
+# Tests not needed in the runtime image
+tests/
+pytest.ini
+
+*.md
+!README.md

@@ -1,0 +1,134 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.headerLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+
+/* ── Panel card ──────────────────────────────────────────── */
+.panel {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--p-color, var(--border));
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: border-color var(--t-normal);
+  will-change: transform, opacity;
+}
+
+.panel:hover {
+  border-color: color-mix(in srgb, var(--p-color) 40%, transparent);
+}
+
+.panelError {
+  border-color: var(--red);
+  opacity: 0.7;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px var(--sp-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-3);
+}
+
+.providerDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.providerName {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  flex: 1;
+}
+
+.panelMeta {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.metaTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  padding: 1px 5px;
+  background: var(--surface);
+  border-radius: var(--r-full);
+}
+
+.panelBody {
+  padding: var(--sp-3);
+  min-height: 64px;
+}
+
+.responseText {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: pre-wrap;
+  margin: 0;
+  /* Clamp to 4 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.errorText {
+  font-size: 11px;
+  color: var(--red);
+  font-family: var(--font-mono);
+}
+
+/* ── Skeleton ────────────────────────────────────────────── */
+.skeleton {
+  border-radius: var(--r-sm);
+  background: linear-gradient(
+    90deg,
+    var(--surface-3)  25%,
+    var(--surface-2)  50%,
+    var(--surface-3)  75%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skH  { height: 12px; width: 70%; }
+.skL  { height: 9px; width: 100%; margin-bottom: 5px; }
+.skMed   { width: 85%; }
+.skShort { width: 55%; }
+
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position:  400px 0; }
+}

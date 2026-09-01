@@ -1,0 +1,279 @@
+/* ════════════════════════════════════════════════════════════
+   HEIMDALL — Analytics Page
+   ════════════════════════════════════════════════════════════ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4) var(--sp-6);
+  border-bottom: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.headerRight {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.refreshBtn,
+.exportBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 7px 14px;
+  border-radius: var(--r-sm);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--t-fast);
+  will-change: transform;
+}
+
+.refreshBtn {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+.refreshBtn:hover { border-color: var(--border-hot); color: var(--text); }
+
+.exportBtn {
+  background: var(--purple-dim);
+  border: 1px solid rgba(167,139,250,0.3);
+  color: var(--purple);
+}
+
+.exportBtn:hover { box-shadow: 0 0 16px var(--purple-glow); }
+
+.body {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* ── KPI Grid ────────────────────────────────────────────── */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-3);
+}
+
+.kpi {
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--kpi-color) 18%, transparent);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5) var(--sp-5);
+  transition: border-color var(--t-normal), box-shadow var(--t-normal);
+  will-change: transform;
+}
+
+.kpi:hover {
+  border-color: color-mix(in srgb, var(--kpi-color) 40%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--kpi-color) 10%, transparent);
+}
+
+.kpiHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+
+.kpiLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kpiValue {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--sp-2);
+}
+
+.kpiSub {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ── Charts grid ─────────────────────────────────────────── */
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  gap: var(--sp-3);
+}
+
+.chartCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+}
+
+.chartTitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--sp-4);
+}
+
+.chartWrap {
+  position: relative;
+}
+
+.legend {
+  display: flex;
+  gap: var(--sp-4);
+  margin-top: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.legendDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Token comparison ────────────────────────────────────── */
+.sectionCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+}
+
+.sectionTitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-5);
+}
+
+.cmpGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.cmpRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  will-change: transform, opacity;
+}
+
+.cmpLabel {
+  font-size: 12px;
+  color: var(--text-dim);
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.cmpBars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cmpBarWrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.cmpBarLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  width: 96px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.cmpTrack {
+  flex: 1;
+  height: 5px;
+  background: var(--surface-3);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+
+.cmpFill {
+  height: 100%;
+  border-radius: var(--r-full);
+  will-change: width;
+}
+
+.cmpNum {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  width: 70px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Skeleton ────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-2)  25%,
+    var(--surface-3)  50%,
+    var(--surface-2)  75%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  display: block;
+}
+
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position:  400px 0; }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinning { animation: spin 0.8s linear infinite; }

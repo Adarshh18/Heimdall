@@ -1,0 +1,193 @@
+/**
+ * tokens.css — HEIMDALL design system tokens
+ *
+ * Changes from original:
+ * - Added dark theme CSS variables used by Home.jsx dark theme
+ * - Added global resets and scrollbar styling
+ * - Fonts loaded once by App.jsx — no @import here
+ */
+
+/* ── Base reset ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Light theme (Chat / Simulation / Analytics) ─────────────── */
+:root {
+  /* Backgrounds */
+  --bg-page:      #FFFFFF;
+  --bg-surface:   #F8FAFC;
+  --bg-surface-2: #F1F5F9;
+  --bg-nav:       rgba(255,255,255,0.97);
+
+  /* Borders */
+  --border:       #E2E8F0;
+  --border-focus: #94A3B8;
+
+  /* Text */
+  --text-primary:   #0F172A;
+  --text-secondary: #475569;
+  --text-muted:     #94A3B8;
+  --text-disabled:  #CBD5E1;
+
+  /* Brand */
+  --brand-dark:   #0A0F1E;
+  --brand-accent: #00F5FF;   /* cyan — used on dark pages */
+
+  /* Semantic */
+  --pass:       #059669;
+  --pass-bg:    rgba(5,150,105,0.06);
+  --pass-border:rgba(5,150,105,0.22);
+
+  --block:       #DC2626;
+  --block-bg:    rgba(220,38,38,0.055);
+  --block-border:rgba(220,38,38,0.22);
+
+  --warning:     #D97706;
+  --info:        #2563EB;
+
+  /* LLM badges */
+  --gemini-badge:  #1A73E8;
+  --groq-badge:    #F55036;
+  --mistral-badge: #FF7000;
+
+  /* Layer colors */
+  --layer-l1: #2563EB;
+  --layer-l2: #7C3AED;
+  --layer-l3: #0891B2;
+  --layer-l4: #059669;
+  --layer-ag: #6366F1;
+  --layer-o2: #DC2626;
+  --layer-o3: #D97706;
+  --layer-o4: #7C3AED;
+
+  /* Typography */
+  --font-display:  'Barlow Condensed', sans-serif;
+  --font-body:     'Barlow', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+}
+
+/* ── Dark theme (Home.jsx) ───────────────────────────────────── */
+[data-theme="dark"],
+.heimdall-dark {
+  --bg-page:        #030712;
+  --bg-surface:     #0d1117;
+  --bg-surface-2:   #161b22;
+  --bg-surface-3:   #1c2128;
+  --bg-nav:         rgba(3,7,18,0.95);
+
+  --border:         rgba(0,245,255,0.12);
+  --border-hot:     rgba(0,245,255,0.30);
+
+  --text-primary:   #e6edf3;
+  --text-secondary: #7d8590;
+  --text-muted:     #3d444d;
+
+  --brand-accent:   #00f5ff;
+  --brand-accent-dim: rgba(0,245,255,0.10);
+
+  --pass:        #22d3a5;
+  --pass-bg:     rgba(34,211,165,0.12);
+  --pass-border: rgba(34,211,165,0.28);
+
+  --block:        #ff4d6d;
+  --block-bg:     rgba(255,77,109,0.12);
+  --block-border: rgba(255,77,109,0.30);
+}
+
+/* ── Scrollbars ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width:  4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background:    #E2E8F0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
+
+/* Dark scrollbars for dark sections */
+.heimdall-dark ::-webkit-scrollbar-thumb,
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(0,245,255,0.18);
+}
+.heimdall-dark ::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,245,255,0.32);
+}
+
+/* ── Global animation keyframes ─────────────────────────────── */
+@keyframes heimdall-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes heimdall-pulse {
+  0%,100% { opacity: 1; transform: scale(1);    }
+  50%     { opacity: .4; transform: scale(.85); }
+}
+@keyframes heimdall-blink {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0; }
+}
+@keyframes heimdall-spin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+@keyframes heimdall-scan {
+  0%   { left: -38%; }
+  100% { left: 138%; }
+}
+@keyframes heimdall-marquee {
+  from { transform: translateX(0);    }
+  to   { transform: translateX(-50%); }
+}
+@keyframes heimdall-slide-in {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+@keyframes heimdall-pop-in {
+  from { opacity: 0; transform: scale(.94) translateY(6px); }
+  to   { opacity: 1; transform: scale(1)   translateY(0);   }
+}
+
+/* ── Utility classes ─────────────────────────────────────────── */
+.text-mono  { font-family: var(--font-mono);    }
+.text-cond  { font-family: var(--font-display); }
+.text-body  { font-family: var(--font-body);    }
+
+.h-pass  { color: var(--pass);  }
+.h-block { color: var(--block); }
+
+.animate-fade-up  { animation: heimdall-fade-up  .7s ease both; }
+.animate-pulse    { animation: heimdall-pulse    1.8s infinite; }
+.animate-spin     { animation: heimdall-spin      .7s linear infinite; }
+.animate-slide-in { animation: heimdall-slide-in  .28s ease; }
+.animate-pop-in   { animation: heimdall-pop-in    .4s cubic-bezier(.34,1.56,.64,1); }
