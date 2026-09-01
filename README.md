@@ -330,7 +330,7 @@ Repository-level activity (updates automatically):
 ### Clone and configure
 
 ```bash
-git clone https://github.com/RaGaS958/Heimdall.git
+git clone https://github.com/Adarshh18/Heimdall.git
 cd Heimdall
 ```
 
@@ -436,11 +436,6 @@ Keep commits scoped to one logical change. Describe what changed and, where it i
 No license file is currently included in this repository. Until one is added, the code defaults to standard copyright — public visibility on GitHub does not by itself grant reuse rights. An OSI-approved permissive license such as MIT is a reasonable default for a project at this stage, addable through GitHub's own license template picker.
 
 ---
-
-## Author
-
-**Pushkar Khattri**
-GitHub: [@RaGaS958](https://github.com/RaGaS958)
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E3A8A,100:0F172A&height=120&section=footer" alt="footer"/>
