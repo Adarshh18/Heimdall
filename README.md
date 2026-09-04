@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E3A8A&height=180&section=header&text=HEIMDALL&fontSize=64&fontColor=FFFFFF&fontAlignY=40&desc=Dual-Gateway%20Prompt%20Injection%20Firewall&descAlignY=62&descSize=18&animation=fadeIn" alt="HEIMDALL banner" />
-</p>
+</p> 
 
 <h1 align="center">HEIMDALL</h1>
 <p align="center">
